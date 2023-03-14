@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Picture Splash Page</title>
+	
+</head>
+<body onload="displayRandomPicture()">
+
+	<img id="randomPicture" src="" alt="Random Picture">
+
+</body>
+<script>
+    function displayRandomPicture() {
+        var pictures = ["rainbow.gif", "download.jpg", "images.jpg"];
+        var randomIndex = Math.floor(Math.random() * pictures.length);
+        var randomPicture = document.getElementById("randomPicture");
+        randomPicture.src = pictures[randomIndex];
+    }
+    
+</script>
+</html>

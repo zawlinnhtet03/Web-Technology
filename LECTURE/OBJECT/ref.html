@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    function customerBooking(bookingId, customerName, film, showDate) {
+        this.bookingId = bookingId;
+        this.customerName = customerName;
+        this.film = film;
+        this.showDate = showDate;
+    }
+    
+    customerBooking.prototype.getCustomerName = function() {
+        return this.customerName;
+    }
+    customerBooking.prototype.setCustromerName = function(customerName) {
+        this.customerName = customerName;
+    }
+
+    customerBooking.prototype.getShowDate = function() {
+        return this.showDate;
+    }
+    customerBooking.prototype.setShowDate = function(showDate) {
+        this.showDate = showDate;
+    }
+
+    customerBooking.prototype.getFilm = function() {
+        return this.film;
+    }
+    customerBooking.prototype.setFilm = function(film) {
+        this.film = film;
+    }
+
+    customerBooking.prototype.getBookingId = function() {
+        return this.bookingId;
+    }
+    customerBooking.prototype.setBookingId = function(bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    var firstBooking = new customerBooking(1234, "Robert Smith", "RagingBull", "25 July 2004 18:20");
+    var secondBooking = new customerBooking(1244, "Arnold Palmer", "ToyStory", "27 July 2004 20:15");
+
+    document.write("1st booking persons name is " + firstBooking.getCustomerName() + "<br />");
+    document.write("2nd booking persons name is " + secondBooking.getCustomerName());
+    
+</script>
+</html>

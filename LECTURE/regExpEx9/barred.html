@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    var myRegExp = /choc(olate|oholic)?|sweet|sugar candy|candy/gi;
+    var myString = "Mmm, I love chocolate, I'm a chocoholic. " + "I love candy too, sweet, sugar candy";
+    myString = myString.replace(myRegExp,"salad"); document.write(myString);
+</script>
+</html>
+<!--  const message = "I love chocolate and sugarcandy, but I know I need to switch to salad.";
+    const barredWords = /chocolate|choc|chocoholic|sugarcandy|candy/gi;
+    const healthyOption = "salad";
+    const filteredMessage = message.replace(barredWords, healthyOption);
+
+    document.write(filteredMessage); // "I love salad and salad, but I know I need to switch to salad." -->

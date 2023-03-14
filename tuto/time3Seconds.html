@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Time Every 3 Seconds</title>
+</head>
+<body>
+	<h1 id="time-display"></h1>
+
+	<script type="text/javascript">
+		var timeDisplay = document.getElementById("time-display");
+
+		function updateTime() {
+			var now = new Date();
+			timeDisplay.innerHTML = now.toLocaleTimeString();
+		}
+
+		setInterval(updateTime, 3000);
+	</script>
+</body>
+</html>

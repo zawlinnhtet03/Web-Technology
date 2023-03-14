@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	var randomNumber=(Math.floor(Math.random()*8)+2); //between 1 to 10 = 2,3,4,5,6,7,8,9 (Math.random()*(max-min+1)+min)
+	var guessNumber=prompt("Input a guess number between 1 to 10","");
+	
+	if(randomNumber==guessNumber){
+		document.write("Good Work");
+	}
+	else document.write("Not matched"+" "+randomNumber);
+	
+	
+</script>
+</body>
+</html>

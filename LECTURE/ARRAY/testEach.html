@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var numbers = [1, 2, 3, 4, 5];
+    function isGreaterThan3(value, index, array) {
+        var returnValue = false;
+        if (value > 3) {
+            returnValue = true;
+        }
+        return returnValue;
+    }
+
+    alert(numbers.every(isGreaterThan3));
+    alert(numbers.some(isGreaterThan3));
+
+    if (numbers.some(isGreaterThan3)) {
+        var result = numbers.filter(isGreaterThan3);
+        alert(result);
+    }
+</script>
+</html>

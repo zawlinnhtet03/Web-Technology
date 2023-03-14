@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		p{width:300px; margin:100px; font-size:16pt;}
+	</style>
+</head>
+<body>
+
+	<div id ="clock" onload="displayClock()"></div>
+	
+	<script type="text/javascript">
+	
+	function displayClock(){
+	var time=new Date();
+	var hrs=time.getHours();
+	var min=time.getMinutes();
+	var sec=time.getSeconds();
+	var meridiem="A.M.";
+	
+	if(hrs>12){
+		hrs=hrs-12;
+		meridiem="P.M.";
+	}
+	
+	if(hrs==0){
+		hrs=12;
+	}
+	
+	hrs = (hrs<10) ? "0"+hrs : hrs;
+	min = (min<10) ? "0"+min : min;
+	sec = (sec<10) ? "0"+sec : sec;
+	
+	var currentTime=hrs+":"+min+":"+sec+" "+meridiem;
+	document.getElementById("clock").innerText=currentTime;
+	
+	}setInterval(displayClock,5000);
+	
+	
+	</script>
+	
+	<p>This is definitely a paragraph.</p>
+</body>
+</html>

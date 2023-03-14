@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<script>
+	var staffSalary = new Array();
+	staffSalary.push(11000,3000,7000);
+	
+	function  taxAssign(salary,index,array){
+	var tax;
+		if(salary>10000){
+			tax=salary*0.3;
+		}
+		
+		else if(salary>5000){
+		tax=salary*0.15;
+		}
+		
+		else tax=0;
+		
+		return tax;
+	}
+	
+	var incomeTax=staffSalary.map(taxAssign);
+	alert("The income tax for each person: "+incomeTax);
+</script>
+</body>
+</html>

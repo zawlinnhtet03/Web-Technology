@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+    var staffSalary = new Array();
+    staffSalary.push(600000, 200000, 400000);
+
+    function taxAssign(salary, index, array) {
+        var tax = 0;
+        if (salary > 500000) {
+            tax = salary * 0.25;
+        }
+        else if (salary > 300000){
+            tax = salary * 0.15;
+        }
+        else {
+            tax = 0;
+        }
+        return tax;
+    }
+
+    var incomeTax = staffSalary.map(taxAssign);
+
+    alert("The income tax for each person is: " + incomeTax);
+</script>
+</html>

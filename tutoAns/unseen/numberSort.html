@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script type="text/javascript">
+		var numberArray = new Array(1,20,200,10,100,50,1000,5);
+		
+		numberArray.sort(function(a,b){return a-b}); //ascending
+		
+		function sorter(value,index,array){
+			return value;
+		}
+		
+		var result = numberArray.map(sorter);
+		document.write("Array in ascending order: " + result + "<br/>");
+		
+		
+		numberArray.sort(function(a,b){return b-a}); //descending
+		
+		var result = numberArray.map(sorter);
+		document.write("Array in descending order: " + result);		
+	</script>
+</body>
+</html>

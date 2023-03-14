@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form1">
+        <p>Name:<br>
+        <input type="text" name="txtName" onchange="txtName_onchange()" />
+        </p>
+
+        <p>Age:<br>
+        <input type="text" name="txtAge" onblur="txtAge_onblur()" size="3" maxlength="3" />
+        </p>
+
+        <p>
+        <input type="button" value="Check Details" name="btnCheckForm" onclick="btnCheckForm_onclick()">
+        </p>
+    </form>
+      
+    <script>
+        const myForm = document.form1;
+        const txtName = myForm.txtName;
+        const txtAge = myForm.txtAge;
+        const btnCheckForm = myForm.btnCheckForm;
+
+        function btnCheckForm_onclick() {
+            
+
+            if (txtName.value == "" || txtAge.value == "") {
+                alert("Please complete all the form");
+                
+                if (txtName.value == "") {
+                    txtName.focus();
+                } else {
+                    txtAge.focus();
+                    txtAge.select();
+                }
+                } else {
+                    alert("Thanks for completing the form " + txtName.value);
+                }
+        }
+        
+        function txtAge_onblur() {
+            var txtAge = document.form1.txtAge;
+
+            if (isNaN(txtAge.value) == true) {
+                alert("Please enter a valid age");
+                txtAge.focus();
+                txtAge.select();
+            }
+        }
+    </script>  
+</body>
+</html>
+
+<!-- function txtName_onchange() {
+            var txtName = document.form1.txtName;
+    
+            if (txtName.value.trim() == "") {
+                alert("Please enter your name");
+                txtName.focus();
+            }
+        } -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form1">
+        <p>Name:<br>
+        <input type="text" name="txtName">
+        </p>
+
+        <p>Age:<br>
+        <input type="text" name="txtAge" size="3" maxlength="3">
+        </p>
+
+        <p>
+        <input type="button" value="Check Details" name="btnCheckForm">
+        </p>
+    </form>
+      
+    <script>
+        const myForm = document.form1;
+        const txtName = myForm.txtName;
+        const txtAge = myForm.txtAge;
+        const btnCheckForm = myForm.btnCheckForm;
+
+        btnCheckForm.addEventListener('click', () => {
+            if (txtName.value === '' || txtAge.value === '') {
+                alert('Please complete all the fields');
+
+                if (txtName.value === '') {
+                    txtName.focus();
+                } else {
+                    txtAge.focus();
+                }
+            } else {
+                alert(`Thanks for completing the form ${txtName.value}`);
+            }
+        });
+
+        txtAge.addEventListener('blur', () => {
+            if (isNaN(txtAge.value)) {
+                alert('Please enter a valid age');
+                txtAge.focus();
+                txtAge.select();
+            }
+        });
+    </script>  
+</body>
+</html> -->

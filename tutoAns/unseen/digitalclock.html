@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="time-display" onload="updateTime()"></h2>
+    
+</body>
+<script type="text/javascript">
+
+    var timeDisplay = document.getElementById("time-display");
+
+    function updateTime() {
+        var nowDate = new Date();
+        var hrs = nowDate.getHours();
+        var min = nowDate.getMinutes();
+        var sec = nowDate.getSeconds();
+        var meridiem = "A.M.";
+		
+		if(hrs > 12) {
+			hrs = hrs - 12;
+			meridiem = "P.M.";
+		}
+	
+		if(hrs == 0) {
+			hrs = 12;
+		}
+	
+		hrs = (hrs < 10) ? "0" + hrs : hrs;
+		min = (min < 10) ? "0" + min : min;
+		sec = (sec < 10) ? "0" + sec : sec;
+		
+		var currentTime = hrs + ":" + min + ":" + sec + " " + meridiem;
+
+        timeDisplay.innerHTML = currentTime;
+    }
+
+    setInterval(updateTime, 1000);
+</script>
+</html>

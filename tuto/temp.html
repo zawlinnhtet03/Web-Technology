@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="get" name="form1">
+        First Name:
+        <input type="text" name="firstName" placeholder="Enter your first name"> <br><br>
+
+        Last Name:
+        <input type="text" name="lastName" placeholder="Enter your last name"> <br><br>
+
+        Age:
+        <input type="text" name="ageNum" size="3" maxlength="3"placeholder="Age" onchange="ageCheck()"> <br><br>
+
+        Telephone:
+        <input type="text" name="telNum"  placeholder="Enter your phone number" maxlength="11" onchange="telCheck()"> <br><br>
+
+        Email:
+        <input type="text" name="emailName" placeholder="Enter your email" onchange="mailcheck()"> <br><br>
+
+        Password:
+        <input type="text" name="passNum" placeholder="Enter your password" onchange="passCheck()"> <br><br>
+
+        Boy:
+        <input type="radio" name="gender" checked="checked" > <br><br>
+
+        Girl:
+        <input type="radio" name="gender"> <br><br>
+
+        <input type="button" value="Submit" onclick="buttonCheck()">
+    </form>
+
+</body>
+
+<script type="text/javascript">
+
+    var myForm = document.form1;
+    var firstName = myForm.firstName;
+    var lastName = myForm.lastName;
+    var ageNum = myForm.ageNum;
+    var telNum = myForm.telNum;
+    var emailName = myForm.emailName;
+    var passNum = myForm.passNum;
+
+    function buttonCheck() {
+        if (firstName.value == "" || lastName.value == "" || ageNum.value == "" || telNum.value == "" || emailName.value == "" || passNum.value == "") {
+            alert("Please complete all the form");
+
+            if (firstName.value == "") {
+                firstName.focus();
+            }
+            if (lastName.value == "") {
+                lastName.focus();
+            }
+            if (ageNum.value == "") {
+                ageNum.focus();
+            }
+            if (telNum.value == "") {
+                telNum.focus();
+            }
+            if (emailName.value == "") {
+                emailName.focus();
+            }
+            if (passNum.value == "") {
+                passNum.focus();
+            }
+        }
+        else {
+            alert("Thanks for completing the form" + firstName.value + " " + lastName.value);
+        }
+    }
+
+    function ageCheck() {
+        if (isNaN(ageNum.value) == true) {
+            alert("Please enter a valid age");
+            ageNum.focus();
+            ageNum.select();
+        }
+    }
+
+    function telCheck() {
+        var telRegExp = /[0-9]{11}/;
+        if (telRegExp.test(telNum) == false) {
+            alert("Please enter a valid phone number");
+            telNum.focus();
+            telNum.select();
+        }
+    }
+
+    function mailCheck() {
+        var mailRegExp = /^[A-Z 0-9\.]+@+[A-Z]+\.(com)$/gi;
+        if (mailRegExp.test(mailName) == false) {
+            alert("Please enter a valid email number");
+            mailName.focus();
+            mailName.select();
+        }
+    }
+
+    function passCheck() {
+        if (passNum.length < 8) {
+            alert("Password must be at least 8 characters");
+            passNum.focus();
+            passNum.select();
+        }
+    }
+
+
+
+</script>
+</html>

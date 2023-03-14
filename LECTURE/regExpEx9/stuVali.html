@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form validation</title>
+</head>
+<body>
+
+    <form action="" name="form1">
+        <fieldset>
+            <legend>STUDENT INFORMATION</legend>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" placeholder="Enter your first name"><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" placeholder="Enter your last name"><br><br>
+
+            <label for="age">Age:</label>
+            <input type="text" name="ageNum" placeholder="Enter your age" onchange="ageCheck()"><br><br>
+
+            <label for="mailName">Your email:</label>
+            <input type="text" name="mailName" placeholder="Enter your email"><br><br>
+
+            <label for="pass">Your Password:</label>
+            <input type="password" name="pass" placeholder="Enter your password" onchange="passCheck()"><br><br>
+
+            <input type="radio" name="gender" value="male" checked="checked">
+            <label for="gender">Male</label><br><br>
+
+            <input type="radio" name="gender" value="female">
+            <label for="gender">Female</label><br><br>
+
+            <input type="radio" name="gender" value="other">
+            <label for="gender">Other</label><br><br>
+
+            <label for="class">Choose from class here</label>
+            <select name="class" id="class">
+                <option value="firstYear">First Year</option>
+                <option value="secondYear">Second Year</option>
+                <option value="thirdYear">Third Year</option>
+            </select><br><br>
+            
+            <input type="checkbox" name="pen" value="pen">
+            <label for="pen">I have a pen</label><br><br>
+
+            <input type="checkbox" name="book" value="book">
+            <label for="book">I have a book</label><br><br>
+
+            <input type="checkbox" name="e-book" value="e-book">
+            <label for="e-book">I have an e-book</label><br><br>
+
+            <textarea name="comment" id="id1" cols="25" rows="8" placeholder="Enter your comment here"></textarea><br><br>
+
+            <input type="button" value="Submit" onclick="buttonCheck()">
+            <input type="reset" value="Reset">
+        </fieldset>        
+    </form>
+
+</body>
+
+<script type="text/javascript">
+
+    var myForm = document.form1;
+    var firstName = myForm.firstName;
+    var lastName = myForm.lastName;
+    var ageNum = myForm.ageNum;
+    var mailName = myForm.mailName;
+    var pass = myForm.pass;
+
+    function buttonCheck() {
+       
+
+        if (firstName.value == "" || lastName.value == "" || ageNum.value == "" || mailName.value == "" || pass.value == "") {
+            alert("Please complete all the form");
+
+            if (firstName.value == "") {
+                firstName.focus();
+            }
+            else if (lastName.value == "") {
+                lastName.focus();
+            }
+            else if (ageNum.value == "") {
+                ageNum.focus();
+            }
+            else if (mailName.value == "") {
+                mailName.focus();
+            }
+            else {
+                pass.focus();
+            }
+        }
+        else {
+            alert("Thanks for completing the form " + firstName.value + " " + lastName.value);
+        }
+    }
+
+    
+
+    function ageCheck() {
+        if (isNaN(ageNum.value) == true) {
+            alert("Please enter a valid age");
+            ageNum.focus();
+            ageNum.select();
+        }
+    }
+
+    function passCheck() {
+        if (pass.length < 8) {
+            alert("Password must be at least 8 characters");
+            pass.focus();
+            pass.select();
+        }
+    }
+
+</script>
+</html>
